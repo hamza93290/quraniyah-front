@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { CoreModule } from '@core/core.module';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
