@@ -1,0 +1,9 @@
+<button data-cy="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <a routerLink="admin" mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Admin</span>
+  </a>
+</mat-menu>
