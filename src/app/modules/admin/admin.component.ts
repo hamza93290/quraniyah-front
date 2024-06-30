@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
 
+  receivedData: boolean = false ;
+
+  // Méthode pour gérer les données reçues de l'enfant
+  onNotify(data: boolean) {
+    this.receivedData = data;
+    console.log('Data received from child: ', data);
+  }
 }

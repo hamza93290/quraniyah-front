@@ -14,7 +14,18 @@ class="example-form"
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput>
+        <input matInput [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        placeholder="votre mot de passe"
+        id="password"
+        formControlName="password">
       </mat-form-field>
+      <button
+                    type="submit"
+                    mat-raised-button
+                    color="primary"
+                    class="button-color mt-4"
+                  >
+                    Se connecter
+                  </button>
 </form>
 </mat-card>

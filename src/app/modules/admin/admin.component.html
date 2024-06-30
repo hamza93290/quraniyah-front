@@ -1,1 +1,4 @@
-<app-login></app-login>
+<app-login (isAuth)="onNotify($event)" *ngIf="!receivedData"></app-login>
+<div *ngIf="receivedData">
+    <app-list-eleve></app-list-eleve>
+</div>

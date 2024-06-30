@@ -13,9 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule , ReactiveFormsModule } from '@angular/forms';
-
-
-
+import {MatTableModule} from '@angular/material/table';
 
 registerLocaleData(localeFr);
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new TranslateHttpLoader(
@@ -39,6 +37,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
     TranslateModule.forRoot({
       defaultLanguage: 'fr',
       loader: {
@@ -63,6 +62,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
   ],
   providers: [
     {
