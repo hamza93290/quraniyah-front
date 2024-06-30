@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CoreModule } from '@core/core.module';
+import { InscriptionComponent } from './component/inscription/inscription.component';
+import { ProgrammeComponent } from './component/programme/programme.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ProgrammeComponent,
+    InscriptionComponent
   ],
   imports: [
     CommonModule,

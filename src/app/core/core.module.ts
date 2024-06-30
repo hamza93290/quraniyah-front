@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 
+
 registerLocaleData(localeFr);
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new TranslateHttpLoader(
   http, './assets/i18n/', '.json'
@@ -45,7 +46,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
         useFactory: httpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
   ],
   exports: [
     HttpClientModule,
