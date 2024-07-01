@@ -45,13 +45,17 @@
               *ngIf="this.registerForm.get('age')?.touched && this.registerForm.get('age')?.hasError('required')">
               Password is required</mat-error>
           </mat-form-field>
-  
+
           <mat-form-field>
-            <input type="text" matInput placeholder="Cursus" formControlName="cursus">
-            <mat-error
-              *ngIf="this.registerForm.get('cursus')?.touched && this.registerForm.get('cursus')?.hasError('required')">
-              Password Confirmation is required</mat-error>
+            <mat-label>Cursus</mat-label>
+            <mat-select formControlName="cursus">
+              @for (food of foods; track food) {
+                <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+              }
+            </mat-select>
           </mat-form-field>
+
+            <mat-checkbox class="example-margin" formControlName="checkbox">Check me!</mat-checkbox>
   
           <div class="button">
             <!-- Button is disabled(not clickable), if our RegisterForm contains Validation Errors -->

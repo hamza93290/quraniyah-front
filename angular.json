@@ -131,6 +131,11 @@
     }
   },
   "cli": {
-    "schematicCollections": ["@angular-eslint/schematics", "@cypress/schematic", "@schematics/angular"]
+    "schematicCollections": [
+      "@angular-eslint/schematics",
+      "@cypress/schematic",
+      "@schematics/angular"
+    ],
+    "analytics": "e6900e36-8c8d-4cb2-a41a-da70354a498b"
   }
 }

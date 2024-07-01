@@ -14,6 +14,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 
 
 registerLocaleData(localeFr);
@@ -39,6 +43,8 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatSelectModule,
+    MatCheckboxModule,
     TranslateModule.forRoot({
       defaultLanguage: 'fr',
       loader: {
@@ -64,6 +70,8 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatSelectModule,
+    MatCheckboxModule,
   ],
   providers: [
     {
