@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ElevesService } from '@core/services/eleves/eleves.service';
 
@@ -22,7 +22,6 @@ export class InscriptionComponent implements OnInit {
     {value: 'ArabeCoran', viewValue: 'Arabe et Coran'},
   ];
 
-  registerForm!: FormGroup;
   public emailRegExp: RegExp = /^[a-zA-Z](?:[a-zA-Z\d]*[-._]?[a-zA-Z\d]+)@[a-zA-Z\d]+[-._]?[a-zA-Z\d]+\.[a-zA-Z]{2,3}$/;
 
   // registerForm = new FormGroup({
@@ -35,31 +34,38 @@ export class InscriptionComponent implements OnInit {
   //   checkbox: new FormControl([false, Validators.requiredTrue])
   // },
   // )
+  registerForm: FormGroup = this.formBuilder.group({
+    name: ['', Validators.required],
+    lastname: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email, Validators.pattern(this.emailRegExp)]],
+    telephone: ['', Validators.required],
+    age: ['', Validators.required],
+    cursus: ['', Validators.required],
+    checkbox: [false, Validators.requiredTrue]  // Assurez-vous que la valeur initiale est false
+  })
 
   constructor(
     private router: Router,
-    private authService: ElevesService,
+    private eleveService: ElevesService,
     private formBuilder: FormBuilder
   ) { }
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      telephone: ['', Validators.required],
-      age: ['', Validators.required],
-      cursus: ['', Validators.required],
-      checkbox: [false, Validators.requiredTrue]  // Assurez-vous que la valeur initiale est false
-    });
+    console.log('etas');
+    
   }
 
-  register() {
-    // if (!this.registerForm.valid) {
-    //   return;
-    // }
-    // this.authService.register(this.registerForm.value).pipe(
-    //   // If registration was successfull, then navigate to login route
-    //   tap(() => this.router.navigate(['../login']))
-    // ).subscribe();
+  register(): void {
+    console.log("btn appeler");
+    
+    if (this.registerForm.valid) {
+      this.eleveService.registerUser(this.registerForm.value).subscribe(
+        response => {
+          console.log('User registered successfully', response);
+        },
+        error => {
+          console.error('Error registering user', error);
+        }
+      );
+     }
   }
 }

@@ -71,7 +71,7 @@ export class LoginComponent {
             //this.tokenService.checkCountdown(tokenDurationInSeconds, false);
 
             // Redirection vers la page des sous traitants
-            this.router.navigate(['/admin/AdminHome']);
+            this.router.navigate(['/admin/liste']);
             this.isAuth.emit(true)
             console.log("je suis connecter");
             
