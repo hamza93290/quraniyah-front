@@ -22,29 +22,29 @@ export class PaypalComponent implements OnInit{
   private initConfig(): void {
     this.payPalConfig = {
     currency: 'EUR',
-    clientId: 'sb',
+    clientId: 'ATeYeBTt9UNoQu0WvOm1_puOC7ZnHkJrhmEodzGfuAJ5L_mHVOqUzTm6pR1GkAICPCEMRZTxdHRh61JV',
     createOrderOnClient: () => <ICreateOrderRequest>{
       intent: 'CAPTURE',
       purchase_units: [
         {
           amount: {
             currency_code: 'EUR',
-            value: '9.99',
+            value: '300.00',
             breakdown: {
               item_total: {
                 currency_code: 'EUR',
-                value: '9.99'
+                value: '300.00'
               }
             }
           },
           items: [
             {
-              name: 'Enterprise Subscription',
+              name: 'Inscription à 1 annee Institut Quraniyah',
               quantity: '1',
               category: 'DIGITAL_GOODS',
               unit_amount: {
                 currency_code: 'EUR',
-                value: '9.99',
+                value: '300.00',
               },
             }
           ]
