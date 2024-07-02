@@ -6,13 +6,15 @@ import { HomeComponent } from './home.component';
 import { CoreModule } from '@core/core.module';
 import { InscriptionComponent } from './component/inscription/inscription.component';
 import { ProgrammeComponent } from './component/programme/programme.component';
+import { PaypalComponent } from './component/paypal/paypal.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     ProgrammeComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    PaypalComponent
   ],
   imports: [
     CommonModule,

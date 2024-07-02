@@ -16,6 +16,8 @@ import {FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NgxPayPalModule } from 'ngx-paypal';
+
 
 
 
@@ -45,6 +47,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     MatTableModule,
     MatSelectModule,
     MatCheckboxModule,
+    NgxPayPalModule,
     TranslateModule.forRoot({
       defaultLanguage: 'fr',
       loader: {
@@ -71,6 +74,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     ReactiveFormsModule,
     MatTableModule,
     MatSelectModule,
+    NgxPayPalModule,
     MatCheckboxModule,
   ],
   providers: [
