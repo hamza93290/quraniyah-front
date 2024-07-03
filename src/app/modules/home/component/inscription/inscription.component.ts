@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ElevesService } from '@core/services/eleves/eleves.service';
+import { ModalService } from '@core/services/modal/modal.service';
+import { PaypalModalComponent } from '../modal/paypal-modal/paypal-modal.component';
+import { MatStepper } from '@angular/material/stepper';
+import { PaypalService } from '@core/services/paypal/paypal.service';
 
 interface Food {
   value: string;
@@ -14,7 +18,8 @@ interface Food {
   styleUrl: './inscription.component.scss'
 })
 export class InscriptionComponent implements OnInit {
-
+  
+  @ViewChild('stepper') private myStepper!: MatStepper;
 
   foods: Food[] = [
     {value: 'Arabe', viewValue: 'Arabe'},
@@ -23,6 +28,9 @@ export class InscriptionComponent implements OnInit {
   ];
 
   public emailRegExp: RegExp = /^[a-zA-Z](?:[a-zA-Z\d]*[-._]?[a-zA-Z\d]+)@[a-zA-Z\d]+[-._]?[a-zA-Z\d]+\.[a-zA-Z]{2,3}$/;
+  public duration: string = "1000";
+  public responsePaypal : boolean = false
+
 
   // registerForm = new FormGroup({
   //   name: new FormControl('', [Validators.required]),
@@ -47,11 +55,17 @@ export class InscriptionComponent implements OnInit {
   constructor(
     private router: Router,
     private eleveService: ElevesService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private modalService: ModalService,
+    private paypalService: PaypalService
   ) { }
   ngOnInit() {
-    console.log('etas');
+    this.paypalService.callFunction$.subscribe(() => {
+      this.someFunction();
+    });
+    console.log(this.responsePaypal + "   eztour");
     
+    console.log(this.myStepper);
   }
 
   register(): void {
@@ -67,5 +81,17 @@ export class InscriptionComponent implements OnInit {
         }
       );
      }
+  }
+
+  someFunction() {
+    this.paypalService.currentMessage.subscribe(message => this.responsePaypal = message);
+    console.log('Function in Second Component triggered!');
+    console.log(this.responsePaypal);
+    this.myStepper.next();  // Move to the next step
+    // Ajoutez votre logique ici
+  }
+
+  openDialog() {
+    this.modalService.openWithData(PaypalModalComponent, this.registerForm.value);
   }
 }

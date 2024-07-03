@@ -7,6 +7,7 @@ import { CoreModule } from '@core/core.module';
 import { InscriptionComponent } from './component/inscription/inscription.component';
 import { ProgrammeComponent } from './component/programme/programme.component';
 import { PaypalComponent } from './component/paypal/paypal.component';
+import { PaypalModalComponent } from './component/modal/paypal-modal/paypal-modal.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PaypalComponent } from './component/paypal/paypal.component';
     HomeComponent,
     ProgrammeComponent,
     InscriptionComponent,
-    PaypalComponent
+    PaypalComponent,
+    PaypalModalComponent
   ],
   imports: [
     CommonModule,

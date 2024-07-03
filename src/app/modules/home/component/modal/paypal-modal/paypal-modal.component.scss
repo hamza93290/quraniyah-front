@@ -1,0 +1,11 @@
+.custom-dialog-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh; /* Vous pouvez ajuster cette valeur selon vos besoins */
+  }
+  
+  .custom-dialog-content {
+    overflow: auto;
+    flex-grow: 1;
+  }
+  

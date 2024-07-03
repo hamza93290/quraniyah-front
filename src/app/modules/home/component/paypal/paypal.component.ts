@@ -18,7 +18,7 @@ export class PaypalComponent implements OnInit{
   ngOnInit(): void {
     this.initConfig();
   }
-  
+
   private initConfig(): void {
     this.payPalConfig = {
     currency: 'EUR',
@@ -29,11 +29,11 @@ export class PaypalComponent implements OnInit{
         {
           amount: {
             currency_code: 'EUR',
-            value: '300.00',
+            value: '0.01',
             breakdown: {
               item_total: {
                 currency_code: 'EUR',
-                value: '300.00'
+                value: '0.01'
               }
             }
           },
@@ -44,7 +44,7 @@ export class PaypalComponent implements OnInit{
               category: 'DIGITAL_GOODS',
               unit_amount: {
                 currency_code: 'EUR',
-                value: '300.00',
+                value: '0.01',
               },
             }
           ]
@@ -60,15 +60,27 @@ export class PaypalComponent implements OnInit{
     },
     onApprove: (data, actions) => {
       console.log('onApprove - transaction was approved, but not authorized', data, actions);
+      console.log(" c passer sur onApprouve" + data + " " + actions);
+
       actions.order.get().then((details: any) => {
+        console.log("c passer une 2 eme fois sur anApprouve" + details);
+
         console.log('onApprove - you can get full order details inside onApprove: ', details);
       });
     },
     onClientAuthorization: (data) => {
+      console.log(" c passer sur onClient Authorization" + data);
+      
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+      this.paypalService.changeMessage(true);
       this.showSuccess = true;
     },
     onCancel: (data, actions) => {
+      console.log("il a quitter ce fumier veux pas Khalassse");
+
+      this.paypalService.changeMessage(true);
+      this.paypalService.triggerFunctionCall();
+      
       console.log('OnCancel', data, actions);
     },
     onError: err => {
