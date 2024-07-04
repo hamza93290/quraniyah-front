@@ -1,17 +1,15 @@
-<mat-toolbar>
+<mat-toolbar class="tool">
   <app-navigation></app-navigation>
   <a style="color: initial; text-decoration: none" routerLink="">
-    <span>ENEDISPO</span>
+    <span>ENEDISPOu</span>
   </a>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <a [routerLink]="['/admin/login']" >link to user component </a>
-  <a [routerLink]="['/home/programme']" >link to programme </a>
-  <a [routerLink]="['/home/inscription']" >link to inscription </a>
-  <a [routerLink]="['/home/paypal']" >link to paypal </a>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+  
+  <div class="linkNav">
+    <p [routerLink]="['/home/paypal']" >Inscription</p>
+    <p [routerLink]="['/home/programme']" >Programme </p>
+    <p [routerLink]="['/home/inscription']" >Soutenez-nous !</p>
+    <p [routerLink]="['/admin/login']" >Admin</p>
+  </div>
+ 
 </mat-toolbar>

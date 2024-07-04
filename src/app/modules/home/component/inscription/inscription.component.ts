@@ -6,6 +6,7 @@ import { ModalService } from '@core/services/modal/modal.service';
 import { PaypalModalComponent } from '../modal/paypal-modal/paypal-modal.component';
 import { MatStepper } from '@angular/material/stepper';
 import { PaypalService } from '@core/services/paypal/paypal.service';
+import { ReglementComponent } from '../modal/reglement/reglement.component';
 
 interface Food {
   value: string;
@@ -92,6 +93,6 @@ export class InscriptionComponent implements OnInit {
   }
 
   openDialog() {
-    this.modalService.openWithData(PaypalModalComponent, this.registerForm.value);
+    this.modalService.openWithData(ReglementComponent);
   }
 }
