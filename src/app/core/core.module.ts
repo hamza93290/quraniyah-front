@@ -19,6 +19,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { MatDialogContent, MatDialogActions, MatDialogTitle, MatDialogClose, MatDialogModule } from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
+
  
 
 registerLocaleData(localeFr);
@@ -53,6 +55,8 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     MatDialogClose,
     MatStepperModule,
     MatDialogModule,
+    MatAccordion, 
+    MatExpansionModule,
     TranslateModule.forRoot({
       defaultLanguage: 'fr',
       loader: {
@@ -87,6 +91,8 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
     MatDialogClose,
     MatStepperModule,
     MatDialogModule,
+    MatAccordion,
+    MatExpansionModule,
   ],
   providers: [
     {
