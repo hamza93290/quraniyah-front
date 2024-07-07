@@ -1,63 +1,54 @@
 <div class="background">
 
-    <img width="50" [src]="'../../../../../assets/images/succesLogo.svg'" alt="" />
+    
+    <img src="../../../assets/images/rub-el-hizb.png" alt="">
+    <h2 class="titre">Illumine ton Coeur par la quête du Savoir</h2>
+    <p class="background-text">D'apres Mu'âwiya :<br> « Lorsque Dieu veut le bien à un serviteur, Il lui octroie la compréhension de la religion. »</p>
+    <button mat-raised-button class="btn-home">inscrivez-vous !</button>
 
-    <p class="t">
-        Illumine ton coeur pas la quete du savoir  
-    </p>
+
 </div>
 
-<h1>Bienvenue a l'ecole</h1>
+  <h2 class="titre-home">Bienvenue a l'école Quraniyah</h2>
 
-  <mat-accordion class="example-headers-align" multi>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Personal data </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-          <mat-icon>account_circle</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <mat-label>First name</mat-label>
-        <input matInput />
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Age</mat-label>
-        <input matInput type="number" min="1" />
-      </mat-form-field>
-    </mat-expansion-panel>
-    <mat-expansion-panel >
-      <mat-expansion-panel-header>
-        <mat-panel-title> Destination </mat-panel-title>
-        <mat-panel-description>
-          Type the country name
-          <mat-icon>map</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <mat-label>Country</mat-label>
-        <input matInput />
-      </mat-form-field>
-    </mat-expansion-panel>
-  
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Day of the trip </mat-panel-title>
-        <mat-panel-description>
-          Inform the date you wish to travel
-          <mat-icon>date_range</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <mat-label>Date</mat-label>
-        <input matInput  readonly />
-      </mat-form-field>
-    </mat-expansion-panel>
-  </mat-accordion>
+<div class="card-container">
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title class="text-card">Présentation de l'association</mat-card-title>
+      <mat-card-subtitle>Herding group</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button>Learn More</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Poodle</mat-card-title>
+      <mat-card-subtitle>Non-sporting group</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button>Learn More</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Australian Shepherd</mat-card-title>
+      <mat-card-subtitle>Herding group</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button>Learn More</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Poodle</mat-card-title>
+      <mat-card-subtitle>Non-sporting group</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button>Learn More</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
 
 <router-outlet></router-outlet>

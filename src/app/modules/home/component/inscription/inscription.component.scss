@@ -1,16 +1,22 @@
-:host {
-    display: flex;
-    justify-content: center;
-    margin: 100px 0px;
-  }
-  
+.text-info-inscription{
+  display: flex;
+  justify-content: center;
+}
+.content-card{
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+}
   mat-card {
     max-width: 600px;
-  
+    border: none;
+    box-shadow: none; /* Pour retirer également l'ombre */
+
     mat-card-title,
     mat-card-content {
       display: flex;
       justify-content: center;
+      
   
       form {
         .mat-form-field {
@@ -31,4 +37,28 @@
         }
       }
     }
+  }
+  .titre-inscription{
+    font-family: 'Philosopher';
+    font-size: 3.125rem;
+    text-align: center;
+    font-weight: 700;
+    margin: 50px;
+  }
+
+  .text-titre-inscription{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Philosopher';
+    color: #010082;
+    line-height: 1.2;
+  }
+  .text-inscription{
+    font-family: 'Noto';
+    line-height: 1.875rem;
+    font-size: 1.4rem;
+  }
+  .btn-emplois{
+    background-color: #010082 !important;
+    color: white !important;
   }

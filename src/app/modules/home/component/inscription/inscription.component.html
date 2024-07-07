@@ -1,8 +1,29 @@
-<div>
-    <a [routerLink]="['../login']">Go to Login</a>
+    
+      <h2 class="titre-inscription">Inscription</h2>
+
+      <div class="text-info-inscription">
+        <div class="container">
+            <div class="services-detail-wrap w-100">
+                <div class="services-detail-desc w-100">
+                    <h2 class="text-titre-inscription">Notre Objectif ?</h2>
+                    <p class="text-inscription">L'objectif de cette formation est d'apprendre à lire le Coran en arabe, de le mémoriser tout en expliquant les regles de tajwid.<br>
+                        Mais pas seulement, nous apprenons à nos élèves à écrire l'arabe et nous leur enseignons également certaines notions <br> de la langue arabe littéraire, ainsi que l'education islamique.  
+                    </p>
+                    <h2 class="text-titre-inscription">Pour qui ?</h2>
+                    <p class="text-inscription">Les cours sont exclusivement réservés au femme.</p>
+                    <h2 class="text-titre-inscription">Ou ?</h2>
+                    <p class="text-inscription">La formation se fera à distance via l'application zoom.</p>
+                    <h2 class="text-titre-inscription">Quand ?</h2>
+                    <button mat-raised-button class="btn-emplois">Voir l'emploi du temps</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+  <div class="content-card">
+
     <mat-card>
-      <mat-card-title>Register</mat-card-title>
-  
+      <mat-card-title class="text-titre-inscription">Formulaire d'inscription</mat-card-title>
       <mat-card-content>
         <mat-vertical-stepper linear #stepper [animationDuration]="duration">
           <mat-step [stepControl]="registerForm">
@@ -82,9 +103,9 @@
           </mat-step>
         </mat-vertical-stepper>
       </mat-card-content>
-  
     </mat-card>
   </div>
+
   
 
 

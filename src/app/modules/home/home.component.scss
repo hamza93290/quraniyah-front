@@ -1,7 +1,7 @@
 .background {
     position: relative;  /* Pour que le pseudo-élément soit positionné par rapport à ce conteneur */
     width: 100%;
-    height: 80vh; /* Ajustez selon vos besoins */
+    height: 70vh; /* Ajustez selon vos besoins */
     background-image: url('../../../assets/images/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -24,21 +24,35 @@
     z-index: 2;  /* Assurez-vous que le voile est au-dessus du fond mais en dessous du contenu */
   }
   
-  .t, img {
-    position: relative;
+  .titre, img, p ,.btn-home{
+    margin: 15px 0 0;
+    text-align: center;
+    width: 575px;
     z-index: 3;  /* Assurez-vous que le contenu est au-dessus du voile noir */
     color: rgb(255, 255, 255);
   }
-  
-  .t {
-    width: 450px;
-    font-size: 5rem;
+  .background-text{
+    font-family: Noto;
+    font-size: 20px;
+    line-height: 1.1;
+
+  }
+  .titre {
+    font-size: 60px;
+    line-height: 1.1;
+  }
+.btn-home{
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+    background-color: #010082 !important;
+    color: white !important;
+}
+  img{
+    width: 50px;
+    height: 50px;
   }
   
-  /* Ajoutez des styles spécifiques pour .extra si nécessaire */
-  .extra {
-    /* Autres styles pour l'élément supplémentaire */
-  }
   .example-action-buttons {
     padding-bottom: 20px;
   }
@@ -51,6 +65,31 @@
   .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
     margin-left: 8px;
   }
-  h1 {
-    font-family: 'Philosopher', sans-serif;
+  h2 {
+    font-family: 'Philosopher';
+}
+.section-pres{
+  margin: 15px;
+}
+.card-container {
+  margin: 0 350px 0 350px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* Espace entre les cartes */
+}
+.card{
+  width: 500px;
+}
+.titre-home{
+  font-size: 3.125rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 50px;
+}
+.text-card{
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Philosopher';
+  color: #010082;
 }
