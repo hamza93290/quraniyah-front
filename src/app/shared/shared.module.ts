@@ -5,6 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
 import { HeaderComponent } from './layout/components/header/header.component';
 import { NavigationComponent } from './layout/components/navigation/navigation.component';
+import { FooterComponent } from './layout/components/footer/footer.component';
 
 
 
@@ -13,7 +14,8 @@ import { NavigationComponent } from './layout/components/navigation/navigation.c
     LayoutComponent,
     BaseLayoutComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
