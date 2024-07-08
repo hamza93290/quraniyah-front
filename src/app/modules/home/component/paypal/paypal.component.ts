@@ -73,14 +73,10 @@ export class PaypalComponent implements OnInit{
       
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
       this.paypalService.changeMessage(true);
-      this.showSuccess = true;
+      this.paypalService.triggerFunctionCall();
     },
     onCancel: (data, actions) => {
       console.log("il a quitter ce fumier veux pas Khalassse");
-
-      this.paypalService.changeMessage(true);
-      this.paypalService.triggerFunctionCall();
-      
       console.log('OnCancel', data, actions);
     },
     onError: err => {

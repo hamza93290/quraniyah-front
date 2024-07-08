@@ -62,3 +62,12 @@
     background-color: #010082 !important;
     color: white !important;
   }
+  .trait{
+    margin: 55px 250px 55px 250px;
+    border: solid 1px #010082;
+  }
+  .formulaire{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }

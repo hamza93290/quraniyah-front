@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ElevesService } from '@core/services/eleves/eleves.service';
 import { ModalService } from '@core/services/modal/modal.service';
-import { PaypalModalComponent } from '../modal/paypal-modal/paypal-modal.component';
 import { MatStepper } from '@angular/material/stepper';
 import { PaypalService } from '@core/services/paypal/paypal.service';
 import { ReglementComponent } from '../modal/reglement/reglement.component';
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
 
 interface Food {
   value: string;
@@ -87,9 +87,17 @@ export class InscriptionComponent implements OnInit {
   someFunction() {
     this.paypalService.currentMessage.subscribe(message => this.responsePaypal = message);
     console.log('Function in Second Component triggered!');
+    console.log("he mouiasss");
+    
     console.log(this.responsePaypal);
     this.myStepper.next();  // Move to the next step
     // Ajoutez votre logique ici
+  }
+
+  onStepChange(event: StepperSelectionEvent) {
+    if (event.selectedIndex === 2) {
+      this.register();
+    }
   }
 
   openDialog() {

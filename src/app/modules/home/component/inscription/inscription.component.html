@@ -20,74 +20,81 @@
         </div>
       </div>
 
+      <div class="trait">
+
+      </div>
   <div class="content-card">
 
     <mat-card>
       <mat-card-title class="text-titre-inscription">Formulaire d'inscription</mat-card-title>
       <mat-card-content>
-        <mat-vertical-stepper linear #stepper [animationDuration]="duration">
+        <mat-vertical-stepper linear #stepper [animationDuration]="duration"  (selectionChange)="onStepChange($event)">
           <mat-step [stepControl]="registerForm">
             <ng-template matStepLabel>Information personnelles</ng-template>
-            <form [formGroup]="registerForm" >
+            <form [formGroup]="registerForm">
         
-              <mat-form-field>
-                <input type="text" matInput placeholder="Nom" formControlName="name">
-                <mat-error
-                  *ngIf="this.registerForm.get('name')?.touched && this.registerForm.get('name')?.hasError('required')">
-                  Username is required</mat-error>
-              </mat-form-field>
-      
-              <mat-form-field>
-                <input type="text" matInput placeholder="Prenom" formControlName="lastname">
-                <mat-error
-                  *ngIf="this.registerForm.get('lastname')?.touched && this.registerForm.get('lastname')?.hasError('required')">
-                  First Name is required</mat-error>
-              </mat-form-field>
-      
-              <mat-form-field>
-                <input type="email" matInput placeholder="Email" formControlName="email">
-                <!-- Here we can display error messages/hints for the user, if one of the Validators adds an error to the email 
-                 with the .touched check we only display the hints if the input was touched by the users -->
-                <mat-error
-                  *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('required')">
-                  Email is required</mat-error>
-                <mat-error
-                  *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('email')">
-                  Email must be a valid Email</mat-error>
-              </mat-form-field>
-      
-              <mat-form-field>
-                <input type="text" matInput placeholder="Telephone" formControlName="telephone">
-                <mat-error
-                  *ngIf="this.registerForm.get('telephone')?.touched && this.registerForm.get('telephone')?.hasError('required')">
-                  Last Name is required</mat-error>
-              </mat-form-field>
-      
-              <mat-form-field>
-                <input type="text" matInput placeholder="Age" formControlName="age">
-                <mat-error
-                  *ngIf="this.registerForm.get('age')?.touched && this.registerForm.get('age')?.hasError('required')">
-                  Password is required</mat-error>
-              </mat-form-field>
-      
-              <mat-form-field>
-                <mat-label>Cursus</mat-label>
-                <mat-select formControlName="cursus">
-                  @for (food of foods; track food) {
-                    <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
-                  }
-                </mat-select>
-              </mat-form-field>
-      
-                <mat-checkbox class="example-margin" formControlName="checkbox">Je reconnais avoir lu et accepté le règlement intérieur.
-                  (<a href="javascript:void(0)" (click)="openDialog()">Voir le reglement</a>)
-
-                </mat-checkbox>
+              <div  class="formulaire">
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Nom" formControlName="name">
+                  <mat-error
+                    *ngIf="this.registerForm.get('name')?.touched && this.registerForm.get('name')?.hasError('required')">
+                    Username is required</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Prenom" formControlName="lastname">
+                  <mat-error
+                    *ngIf="this.registerForm.get('lastname')?.touched && this.registerForm.get('lastname')?.hasError('required')">
+                    First Name is required</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                  <input type="email" matInput placeholder="Email" formControlName="email">
+                  <!-- Here we can display error messages/hints for the user, if one of the Validators adds an error to the email 
+                   with the .touched check we only display the hints if the input was touched by the users -->
+                  <mat-error
+                    *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('required')">
+                    Email is required</mat-error>
+                  <mat-error
+                    *ngIf="this.registerForm.get('email')?.touched && this.registerForm.get('email')?.hasError('email')">
+                    Email must be a valid Email</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Telephone" formControlName="telephone">
+                  <mat-error
+                    *ngIf="this.registerForm.get('telephone')?.touched && this.registerForm.get('telephone')?.hasError('required')">
+                    Last Name is required</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Age" formControlName="age">
+                  <mat-error
+                    *ngIf="this.registerForm.get('age')?.touched && this.registerForm.get('age')?.hasError('required')">
+                    Password is required</mat-error>
+                </mat-form-field>
+        
+                <mat-form-field>
+                  <mat-label>Cursus</mat-label>
+                  <mat-select formControlName="cursus">
+                    @for (food of foods; track food) {
+                      <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+        
+                  <mat-checkbox color="primary" class="example-margin" formControlName="checkbox">Je reconnais avoir lu et accepté le règlement intérieur.
+                    (<a href="javascript:void(0)" (click)="openDialog()">Voir le reglement</a>)
+  
+                  </mat-checkbox>
+              </div>
+              
       
               <div class="button">
                 <!-- Button is disabled(not clickable), if our RegisterForm contains Validation Errors -->
                 <!-- <button type="submit" mat-button [disabled]="!registerForm.valid">Register</button> -->
-                <button mat-button matStepperNext [disabled]="!registerForm.valid">next</button>
+                <button mat-raised-button color="primary" matStepperNext [disabled]="!registerForm.valid">Continuer</button>
+
               </div>
       
             </form>

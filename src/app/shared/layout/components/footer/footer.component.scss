@@ -1,0 +1,52 @@
+.footer {
+    background-color: #010082;
+    color: white;
+    .socialMedia {
+      text-align: center;
+      text-decoration: none;
+    }
+    .footer__content {
+      display: flex;
+      justify-content: space-evenly;
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 1rem;
+      padding: 50px;
+      .TitleFooter {
+        font-size: 1.2rem;
+      }
+      .quraniyahtext {
+        font-size: 1rem;
+        inline-size: 300px;
+        overflow-wrap: break-word;
+        line-height: 1.625rem;
+        box-sizing: border-box;
+      }
+      .ProgrammeTarifs {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    .copyright {
+      text-align: center;
+    }
+  }
+.img-footer {
+    margin-left:40%;
+    width: auto; /* Adjust this value as needed */
+    height: 150px;
+    bottom: 0; /* Position it at the bottom of the viewport */
+    right: 6.875rem; /* Position it from the right of the viewport */
+    background-image: url('../../../../../assets/images/IMG-bleu.png');
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    position: relative; /* Change to fixed positioning */
+    background-size: 85%;
+    z-index: 1000;
+}
+.foot{
+    margin-top: 155px;
+}
