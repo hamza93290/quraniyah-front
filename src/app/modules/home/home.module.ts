@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -10,6 +10,7 @@ import { PaypalComponent } from './component/paypal/paypal.component';
 import { PaypalModalComponent } from './component/modal/paypal-modal/paypal-modal.component';
 import { ReglementComponent } from './component/modal/reglement/reglement.component';
 import { EmploisComponent } from './component/emplois/emplois.component';
+import { ElevesService } from '@core/services/eleves/eleves.service';
 
 
 @NgModule({
@@ -28,4 +29,4 @@ import { EmploisComponent } from './component/emplois/emplois.component';
     CoreModule
   ]
 })
-export class HomeModule { }
+export class HomeModule{ }

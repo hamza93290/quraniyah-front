@@ -13,6 +13,8 @@ export class ElevesService {
     private httpClient: HttpClient
   ) { }
 
+  private apiUrl = 'http://localhost:3000/api/messages'; // URL de l'API backend
+
   getEleves(): Observable<Eleves[]> {
     return this.httpClient.get<Eleves[]>(`${environment.api}/eleve/get`);
   }
@@ -21,5 +23,9 @@ export class ElevesService {
     console.log(elevesData);
     
     return this.httpClient.post<Eleves>(`${environment.api}/eleve/save`, elevesData);
+  }
+
+  getMessages(): Observable<unknown> {
+    return this.httpClient.get(this.apiUrl);
   }
 }
